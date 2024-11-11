@@ -45,13 +45,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         env:
           JF_URL: https://kimt.jfrog.io
+          JF_PROJECT: testing
         with:
           oidc-provider-name: github-elu
           oidc-audience: jfrogelu
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Docker image
-        run: |
-           docker build -t myimage:latest . 
