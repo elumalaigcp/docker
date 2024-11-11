@@ -51,8 +51,9 @@ jobs:
           oidc-audience: jfrogelu
           
       - name: Set up JFROG debug loggers
-        run:
-           export JFROG_CLI_LOG_LEVEL=DEBUG
+        run: echo "Debugging enabled"
+        env:
+           JFROG_CLI_LOG_LEVEL: DEBUG
         
       - name: JFROG BUILD SCAN
         run:
