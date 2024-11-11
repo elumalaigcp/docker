@@ -14,14 +14,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
         run: |
           docker build -t my-elu-image:latest .
 
       - name: Log in to JFrog Artifactory Docker registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.JFROG_USERNAME }}
           password: ${{ secrets.JFROG_PASSWORD }}
@@ -33,5 +33,4 @@ jobs:
 
       - name: Push Docker image to JFrog Artifactory
         run: |
-          docker push ${{ secrets.JFROG_REGISTRY }}/uild-testing-local/my-elu-image:latest
-
+          docker push ${{ secrets.JFROG_REGISTRY }}/build-testing-local/my-elu-image:latest
