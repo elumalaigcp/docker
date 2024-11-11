@@ -14,9 +14,6 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.workspace }}
     steps:
       - name: Get id token
         run: |
