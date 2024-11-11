@@ -11,9 +11,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      OIDC_AUDIENCE: 'jfrogelu'
-      OIDC_PROVIDER: 'github-elu'
     defaults:
       run:
         working-directory: .
