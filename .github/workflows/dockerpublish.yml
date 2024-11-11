@@ -54,4 +54,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-           docker built -t myimage:latest . 
+           docker build -t myimage:latest . 
