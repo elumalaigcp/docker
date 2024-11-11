@@ -54,5 +54,7 @@ jobs:
 
       - name: Build Docker image
         run: |
+          pwd
+          ls -l
           docker build -t my-image:latest .
           docker images
