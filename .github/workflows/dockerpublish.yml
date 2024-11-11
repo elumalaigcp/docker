@@ -18,6 +18,8 @@ jobs:
 
       - name: Build Docker image
         run: |
+          pwd
+          ls -lR
           docker build -t my-image:latest .
 
       - name: Log in to JFrog Artifactory Docker registry
