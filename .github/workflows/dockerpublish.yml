@@ -54,9 +54,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          DOCKERFILE_PATH=$(find . -name "Dockerfile" -print -quit)
           cd /home/runner
-          pwd
-          ls -l
+          ls -l 
           docker build -t my-image:latest .
           docker images
