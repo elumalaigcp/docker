@@ -40,3 +40,11 @@ jobs:
           '{"grant_type": "urn:ietf:params:oauth:grant-type:token-exchange","subject_token_type":"urn:ietf:params:oauth:token-type:id_token","subject_token": "${{ env.ID_TOKEN }}","provider_name": "${{ env.OIDC_PROVIDER }}"}')
           echo "API Response:"
           echo "$RESPONSE"
+
+      - name: Setup JFrog CLI
+        uses: jfrog/setup-jfrog-cli@v4
+        env:
+          JF_URL: https://kimt.jfrog.io
+        with:
+          oidc-provider-name: github-elu
+          oidc-audience: jfrogelu
