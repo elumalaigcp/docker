@@ -1,0 +1,37 @@
+name: Build and Publish Docker Image
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t my--elu-image:latest .
+
+      - name: Log in to JFrog Artifactory Docker registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.JFROG_USERNAME }}
+          password: ${{ secrets.JFROG_PASSWORD }}
+          registry: ${{ secrets.JFROG_REGISTRY }}
+
+      - name: Tag Docker image
+        run: |
+          docker tag my-image:latest ${{ secrets.JFROG_REGISTRY }}/build-testing-local/my-image:latest
+
+      - name: Push Docker image to JFrog Artifactory
+        run: |
+          docker push ${{ secrets.JFROG_REGISTRY }}/uild-testing-local/my-image:latest
+
