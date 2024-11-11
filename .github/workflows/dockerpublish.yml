@@ -17,6 +17,7 @@ jobs:
     steps:
       - name: Get id token
         run: |
+          ls /home/runner/work/docker/
           ls -lR
           pwd
           ID_TOKEN=$(curl -sLS -H "User-Agent: actions/oidc-client" -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
