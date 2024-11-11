@@ -30,7 +30,7 @@ jobs:
       - name: Tag Docker image
         run: |
           docker images
-          docker tag 43d825359270 kimt.jfrog.io/build-testing-local/testing:latest
+          docker tag my-image:latest kimt.jfrog.io/build-testing-local/testing:latest
 
       - name: Push Docker image to JFrog Artifactory
         run: |
