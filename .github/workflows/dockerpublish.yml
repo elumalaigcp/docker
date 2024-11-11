@@ -14,6 +14,9 @@ jobs:
       contents: read
       id-token: write
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}
     steps:
       - name: Get id token
         run: |
@@ -54,7 +57,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          cd /home/runner
-          ls -l 
+          pwd
+          ls -l
           docker build -t my-image:latest .
           docker images
