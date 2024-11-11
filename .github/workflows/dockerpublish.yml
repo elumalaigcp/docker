@@ -49,3 +49,9 @@ jobs:
         with:
           oidc-provider-name: github-elu
           oidc-audience: jfrogelu
+        
+      - name: JFROG BUILD SCAN
+        run:
+          jf build-scan my-build-testing 1 --project=testing --fail
+
+
