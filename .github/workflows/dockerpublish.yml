@@ -57,7 +57,6 @@ jobs:
 
       - name: Build Docker image
         run: |
+          cd ./docker
           pwd
           ls -lR
-          echo "Workspace: $GITHUB_WORKSPACE"
-          ls -R $GITHUB_WORKSPACE
