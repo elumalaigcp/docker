@@ -18,6 +18,7 @@ jobs:
 
       - name: Build Docker image
         run: |
+          echo $HOME
           pwd
           ls -lR
           docker build -t my-image:latest .
