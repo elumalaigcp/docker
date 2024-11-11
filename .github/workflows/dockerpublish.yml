@@ -59,3 +59,5 @@ jobs:
         run: |
           pwd
           ls -lR
+          echo "Workspace: $GITHUB_WORKSPACE"
+          ls -R $GITHUB_WORKSPACE
