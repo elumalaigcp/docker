@@ -59,4 +59,3 @@ jobs:
         run:
           jf build-scan my-build-testing 1 --project=testing --fail
 
-
