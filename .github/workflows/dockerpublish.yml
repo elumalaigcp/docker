@@ -56,7 +56,7 @@ jobs:
            JFROG_CLI_LOG_LEVEL: DEBUG
         
       - name: JFROG BUILD SCAN
-        run:
+        run: |
           ls
           jf rt u response.json Intellect-scan
           jf build-scan my-build-testing 1 --project=testing --fail
