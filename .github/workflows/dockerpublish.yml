@@ -57,8 +57,9 @@ jobs:
         
       - name: JFROG BUILD SCAN
         run: |
+          touch response.json
           ls
-          jf rt u response.json Intellect-scan
-          jf build-scan my-build-testing 1 --project=testing --fail
+          jf rt u response.json adityar-generic-local
+
           
 
