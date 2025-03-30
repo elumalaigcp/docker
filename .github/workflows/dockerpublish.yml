@@ -57,4 +57,4 @@ jobs:
         
       - name: JFROG BUILD SCAN
         run:
-          jf build-scan testingoidc 1 --project=elumalai --fail
+          jf build-scan testingoidc 3 --project=demo --fail
