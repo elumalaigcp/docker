@@ -23,18 +23,21 @@ jobs:
           ls -lR
           docker build -t my-image:latest .
 
-      - name: Log in to JFrog Artifactory Docker registry
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.JFROG_USERNAME }}
-          password: ${{ secrets.JFROG_PASSWORD }}
-          registry: ${{ secrets.JFROG_REGISTRY }}
+      - name: setup jfcli
+        uses: jfrog/setup-jfrog-cli@v4
+        env:
+          # JFrog Platform url
+          JF_URL: ${{ vars.JF_URL }} # or 'https://acme.jfrog.io'
 
-      - name: Tag Docker image
-        run: |
-          docker images
-          docker tag my-image:latest kimt.jfrog.io/build-testing-local/testing:latest
+          # Basic authentication credentials
+          JF_USER: ${{ secrets.JF_USER }}
+          # or
+          # JFrog Platform access token
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+      - run: |
+          jf rt ping
 
-      - name: Push Docker image to JFrog Artifactory
+      - name: jf docker scan
         run: |
-          docker push kimt.jfrog.io/build-testing-local/testing:latest
+          jf docker scan my-image:latest
+
