@@ -27,7 +27,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         env:
           # JFrog Platform url
-          JF_URL: ${{ vars.JF_URL }} # or 'https://acme.jfrog.io'
+          JF_URL: ${{ vars.JF_URL }} #
 
           # Basic authentication credentials
           JF_USER: ${{ secrets.JF_USER }}
