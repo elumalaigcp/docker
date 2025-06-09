@@ -41,7 +41,7 @@ jobs:
           echo "$RESPONSE"
 
       - name: Setup JFrog CLI
-        uses: jfrog/setup-jfrog-cli@v4
+        uses: jfrog/setup-jfrog-cli@v4.5.11
         env:
           JF_URL: https://hts2.jfrog.io
           JF_PROJECT: demo
