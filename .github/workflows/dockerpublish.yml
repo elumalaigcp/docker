@@ -24,7 +24,7 @@ jobs:
           docker build -t my-image:latest .
 
       - name: setup jfcli
-        uses: jfrog/setup-jfrog-cli@v4
+        uses: jfrog/setup-jfrog-cli@v4.5.11
         env:
           # JFrog Platform url
           JF_URL: ${{ vars.JF_URL }} #
