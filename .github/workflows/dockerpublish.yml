@@ -36,7 +36,6 @@ jobs:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
       - run: |
           jf rt ping
-
       - name: jf docker scan
         run: |
           jf docker scan my-image:latest
