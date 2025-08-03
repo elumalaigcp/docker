@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-  workflow_dispatch:  # Space added for clarity
+  workflow_dispatch:
 
 permissions:
   id-token: write
