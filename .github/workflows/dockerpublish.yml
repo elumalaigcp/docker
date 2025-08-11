@@ -41,8 +41,8 @@ jobs:
 
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
-        with
-          version: 2.78.2
+        with:
+          version: latest
         
         env:
           JF_URL: https://hts2.jfrog.io
