@@ -41,8 +41,6 @@ jobs:
 
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
-        with:
-          version: latest
         
         env:
           JF_URL: https://hts2.jfrog.io
@@ -50,6 +48,7 @@ jobs:
         with:
           oidc-provider-name: github-elu
           oidc-audience: jfrogelu
+          version: latest
           
       - name: Set up JFROG debug loggers
         run: echo "Debugging enabled"
